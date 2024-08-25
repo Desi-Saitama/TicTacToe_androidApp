@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (b3.equals(b5) && b5.equals(b7) && !b3.equals("")) {
                     Toast.makeText(this, "Winner is:" + b5, Toast.LENGTH_SHORT).show();
                     reset_button();
+                }else if(count==9){
+                    Toast.makeText(this, "Game is Draw", Toast.LENGTH_SHORT).show();
+                    reset_button();
                 }
             }
         }
