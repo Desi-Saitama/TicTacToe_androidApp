@@ -44,44 +44,68 @@ public class MainActivity extends AppCompatActivity {
 
     public void Check(View view){
         Button btnCurrent = (Button) view;
-        count++;
-        if(flag==0){
-            btnCurrent.setText("X");
-            flag=1;
-        } else{
-            btnCurrent.setText("O");
-            flag=0;
-        }
+        if (btnCurrent.getText().toString().equals("")) {
+            count++;
+            if (flag == 0) {
+                btnCurrent.setText("X");
+                flag = 1;
+            } else {
+                btnCurrent.setText("O");
+                flag = 0;
+            }
 
-        if(count>4){
-            b1 = btn1.getText().toString();
-            b2 = btn2.getText().toString();
-            b3 = btn3.getText().toString();
-            b4 = btn4.getText().toString();
-            b5 = btn5.getText().toString();
-            b6 = btn6.getText().toString();
-            b7 = btn7.getText().toString();
-            b8 = btn8.getText().toString();
-            b9 = btn9.getText().toString();
+            if (count > 4) {
+                b1 = btn1.getText().toString();
+                b2 = btn2.getText().toString();
+                b3 = btn3.getText().toString();
+                b4 = btn4.getText().toString();
+                b5 = btn5.getText().toString();
+                b6 = btn6.getText().toString();
+                b7 = btn7.getText().toString();
+                b8 = btn8.getText().toString();
+                b9 = btn9.getText().toString();
 
-            //CONDITIONS
-            if (b1.equals(b2) && b2.equals(b3) && !b1.equals("")){
-                Toast.makeText(this, "Winner is: "+b1,Toast.LENGTH_SHORT).show();
-            }else if (b4.equals(b5) && b5.equals(b6) && !b4.equals("")){
-                Toast.makeText(this, "Winner is:"+b4, Toast.LENGTH_SHORT).show();
-            }else if (b7.equals(b8) && b8.equals(b9) && !b7.equals("")){
-                Toast.makeText(this, "Winner is:"+b7, Toast.LENGTH_SHORT).show();
-            }else if (b1.equals(b4) && b4.equals(b7) && !b1.equals("")){
-                Toast.makeText(this, "Winner is:"+b1, Toast.LENGTH_SHORT).show();
-            }else if (b2.equals(b5) && b5.equals(b8) && !b2.equals("")){
-                Toast.makeText(this, "Winner is:"+b5, Toast.LENGTH_SHORT).show();
-            }else if (b3.equals(b6) && b6.equals(b9) && !b3.equals("")){
-                Toast.makeText(this, "Winner is:"+b3, Toast.LENGTH_SHORT).show();
-            }else if (b1.equals(b5) && b5.equals(b9) && !b1.equals("")){
-                Toast.makeText(this, "Winner is:"+b1, Toast.LENGTH_SHORT).show();
-            }else if (b3.equals(b5) && b5.equals(b7) && !b3.equals("")){
-                Toast.makeText(this, "Winner is:"+b5, Toast.LENGTH_SHORT).show();
+                //CONDITIONS
+                if (b1.equals(b2) && b2.equals(b3) && !b1.equals("")) {
+                    Toast.makeText(this, "Winner is: " + b1, Toast.LENGTH_SHORT).show();
+                    reset_button();
+                } else if (b4.equals(b5) && b5.equals(b6) && !b4.equals("")) {
+                    Toast.makeText(this, "Winner is:" + b4, Toast.LENGTH_SHORT).show();
+                    reset_button();
+                } else if (b7.equals(b8) && b8.equals(b9) && !b7.equals("")) {
+                    Toast.makeText(this, "Winner is:" + b7, Toast.LENGTH_SHORT).show();
+                    reset_button();
+                } else if (b1.equals(b4) && b4.equals(b7) && !b1.equals("")) {
+                    Toast.makeText(this, "Winner is:" + b1, Toast.LENGTH_SHORT).show();
+                    reset_button();
+                } else if (b2.equals(b5) && b5.equals(b8) && !b2.equals("")) {
+                    Toast.makeText(this, "Winner is:" + b5, Toast.LENGTH_SHORT).show();
+                    reset_button();
+                } else if (b3.equals(b6) && b6.equals(b9) && !b3.equals("")) {
+                    Toast.makeText(this, "Winner is:" + b3, Toast.LENGTH_SHORT).show();
+                    reset_button();
+                } else if (b1.equals(b5) && b5.equals(b9) && !b1.equals("")) {
+                    Toast.makeText(this, "Winner is:" + b1, Toast.LENGTH_SHORT).show();
+                    reset_button();
+                } else if (b3.equals(b5) && b5.equals(b7) && !b3.equals("")) {
+                    Toast.makeText(this, "Winner is:" + b5, Toast.LENGTH_SHORT).show();
+                    reset_button();
+                }
             }
         }
+    }
+
+    public void reset_button(){
+        btn1.setText("");
+        btn2.setText("");
+        btn3.setText("");
+        btn4.setText("");
+        btn5.setText("");
+        btn6.setText("");
+        btn7.setText("");
+        btn8.setText("");
+        btn9.setText("");
+        count=0;
+        flag=0;
     }
 }
